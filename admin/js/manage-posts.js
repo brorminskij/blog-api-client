@@ -13,8 +13,8 @@ async function fetchAllPosts() {
             let postDate = new Date(post.date);
             table.innerHTML += `<tr><td>${post.title}</td>` + `<td>${post.author}</td>` +
             `<td>${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()}</td>` + 
-            // `<td>${post.content}</td>` +
-            `<td><a href="/admin/update-post.html">Update</a> | <a href='#' class="delete-post" data-id="${post['_id']}">Delete</a></td></tr>`;
+            `<td>${post.tags}</td>` +
+            `<td><a href="/admin/update-post.html?id=${post['_id']}">Update</a> | <a href='#' class="delete-post" data-id="${post['_id']}">Delete</a></td></tr>`;
         }
     }catch (message) {
         throw new Error(message);
