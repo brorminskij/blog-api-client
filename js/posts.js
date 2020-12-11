@@ -15,7 +15,7 @@ async function fetchAllPosts() {
             container.innerHTML += `<h2>${post.author}</h2>`
             let postDate = new Date(post.date);
             container.innerHTML += `<h3>${postDate.getFullYear()}-${postDate.getMonth()}-${postDate.getDate()}</h3>`;
-            container.innerHTML += `<p>${post.content.substring(1,100)}<a href="/post.html?id=${post['_id']}"> Read More</a></p>`;
+            container.innerHTML += `<p>${post.content.substring(0,100)}<a href="/post.html?id=${post['_id']}"> Read More</a></p>`;
             container.innerHTML += `<h5>${post.tags}</h5>`;
 
         }
