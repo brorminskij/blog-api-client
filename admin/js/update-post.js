@@ -17,8 +17,32 @@ async function prefillForm() {
         document.getElementById('title').value = data.title;
         document.getElementById('author').value = data.author;
         document.getElementById('content-textarea').value = data.content;
-        let hej = document.getElementById('tags').value = data.tags;
-        console.log(hej)
+        selector = document.getElementById('tags');
+        let chosenTags = document.getElementById('tags').value = data.tags;
+        console.log(chosenTags)
+
+        var food = document.getElementById("food")
+        var economy = document.getElementById("economy")
+        var sports = document.getElementById("sports")
+        var techno = document.getElementById("techno")
+    
+
+        for (let tag of chosenTags){
+            
+              if (tag == food.value) {
+                   food.selected = true
+               }
+                if (tag == techno.value) {
+                    techno.selected = true
+                }
+
+              if (tag == economy.value) {
+                   economy.selected = true
+               }
+            if (tag == sports.value) {
+                   sports.selected = true
+               }
+        }
 
     } catch (message) {
         throw new Error(message);
@@ -49,7 +73,6 @@ function updatePostEvent() {
 
         console.log(object);
         console.log(JSON.stringify(object));
-
 
         try {
             var response = await fetch('http://localhost:3000/posts/' + urlParams.get('id'), {
