@@ -28,18 +28,18 @@ async function prefillForm() {
     
 
         for (let tag of chosenTags){
-            
+            console.log(techno.value);
+            console.log(tag);
               if (tag == food.value) {
                    food.selected = true
                }
                 if (tag == techno.value) {
                     techno.selected = true
                 }
-
               if (tag == economy.value) {
                    economy.selected = true
                }
-            if (tag == sports.value) {
+              if (tag == sports.value) {
                    sports.selected = true
                }
         }
